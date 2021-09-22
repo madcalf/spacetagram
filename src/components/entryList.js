@@ -5,13 +5,15 @@ import Entry from './entry';
 const EntryList = ({ data }) => {
   console.log('List', data);
   return (
-    <div className={styles.entryList}>
-      <h2>Photos of the Day</h2>
-      {data &&
-        data.map((item, index) => {
-          return <Entry key={index} data={item} />;
-        })}
-    </div>
+    <>
+      <h2>NASA Photos of the Day</h2>
+      <div className={styles.entryList}>
+        {data &&
+          data.map((item, index) => {
+            return <Entry key={index} data={item} />;
+          })}
+      </div>
+    </>
   );
 };
 

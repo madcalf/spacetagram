@@ -1,5 +1,19 @@
 .entry {
   border: 1px solid black;
-  width: 50%;
-  margin: auto;
+  background-color: white;
+  /* width: 50%; */
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.entry img {
+  width: 90%;
+  /* flex-basis: 90%; */
+}
+
+.entry .explanation {
+  text-align: justify;
 }

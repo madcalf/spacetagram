@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import * as styles from '../styles/entry.module.css';
 
 /* Each item has the following
@@ -14,14 +14,18 @@ url	"https://apod.nasa.gov/apod/image/2109/SunSpotHill_Coy_960.jpg"
 */
 
 const Entry = ({ data }) => {
-  console.log('Entry', data);
+  const mediaIsImage = data.mediaType === 'image';
+
   return (
     <article className={styles.entry}>
       <h3>{data.title}</h3>
-      <p className="date">{data.date}</p>
-      <p className="copyright">Soure: {data.copyright}</p>
+      <p className={styles.date}>{data.date}</p>
+      {data.copyrignt && (
+        <p className={styles.copyright}>Soure: {data.copyright}</p>
+      )}
       <img src={data.url} alt={data.title} />
-      <p className="explanation">{data.explanation}</p>
+
+      <p className={styles.explanation}>{data.explanation}</p>
     </article>
   );
 };
