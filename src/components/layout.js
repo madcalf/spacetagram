@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
       <header>
         <h1>Spacetagram</h1>
       </header>
-      <main classname={styles.contentContainer}>{children}</main>
+      <main className={styles.contentContainer}>{children}</main>
     </>
   );
 };

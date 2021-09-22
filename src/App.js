@@ -1,17 +1,30 @@
+import { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Layout from './components/layout';
 import EntryList from './components/entryList';
+import axios from 'axios';
 
 function App() {
-  const dummyData = ['earth', 'mars', 'venus', 'pluto'];
+  const apiKey = '9ueCLo2R7DzlPhmtfxpbLc3oZKglHmIRDSBBhA6U';
+  const [like, setLike] = useState(false);
+  const [data, setData] = useState();
+  const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=2021-09-01`;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get(url);
+      console.log(data);
+      setData(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="App">
       <Layout>
-        <section>
-          <EntryList data={dummyData} />
-        </section>
+        <EntryList data={data} />
       </Layout>
     </div>
   );
