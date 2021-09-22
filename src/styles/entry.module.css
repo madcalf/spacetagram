@@ -16,7 +16,8 @@
   text-align: left;
 }
 
-.entry img {
+.entry img,
+iframe {
   width: 100%;
 }
 
