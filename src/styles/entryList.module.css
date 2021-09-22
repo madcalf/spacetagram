@@ -5,9 +5,18 @@
 
   display: grid;
   /* grid-template-columns: repeat(3, calc(100% / 3)); */
-  grid-template-columns: 50%;
+  grid-template-columns: 100%;
   justify-content: center;
   text-decoration: none;
-  border-radius: 30px;
   gap: 15px;
+}
+
+.entryList h3 {
+  margin-top: 10px;
+}
+
+@media (min-width: 550px) {
+  .entryList {
+    grid-template-columns: 60%;
+  }
 }
