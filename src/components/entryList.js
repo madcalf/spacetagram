@@ -3,7 +3,6 @@ import * as styles from '../styles/entryList.module.css';
 import Entry from './entry';
 
 const EntryList = ({ data }) => {
-  console.log('List', data);
   return (
     <>
       <h2>NASA Photos of the Day</h2>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Layout from './components/layout';
 import EntryList from './components/entryList';
@@ -7,7 +6,6 @@ import axios from 'axios';
 
 function App() {
   const apiKey = '9ueCLo2R7DzlPhmtfxpbLc3oZKglHmIRDSBBhA6U';
-  const [like, setLike] = useState(false);
   const [data, setData] = useState();
   const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&start_date=2021-09-01`;
 
@@ -19,7 +17,7 @@ function App() {
     };
 
     fetchData();
-  }, []);
+  }, [url]);
 
   return (
     <div className="App">
