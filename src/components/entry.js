@@ -14,6 +14,7 @@ url	"https://apod.nasa.gov/apod/image/2109/SunSpotHill_Coy_960.jpg"
 */
 
 const Entry = ({ data }) => {
+  console.log('Entry', data);
   const mediaIsImage = data.mediaType === 'image';
 
   return (
@@ -23,7 +24,17 @@ const Entry = ({ data }) => {
       {data.copyrignt && (
         <p className={styles.copyright}>Soure: {data.copyright}</p>
       )}
-      <img src={data.url} alt={data.title} />
+      {data.media_type === 'image' ? (
+        <img src={data.url} alt={data.title} />
+      ) : (
+        <div className={styles.videoContainer}>
+          <iframe
+            src={data.url}
+            title={data.title}
+            allow="accelerometer; autoplay; encrypted-media; fullscreen; geolocation; gyroscope; picture-in-picture"
+          />
+        </div>
+      )}
 
       <p className={styles.explanation}>{data.explanation}</p>
     </article>
